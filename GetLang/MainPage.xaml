@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GetLang.MainPage"
+             >
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Start"
+            HorizontalOptions="FillAndExpand">
+
+            <Image
+                Source="getlang.png"
+                HeightRequest=" 300"
+                WidthRequest="300"></Image>
+
+            <VerticalStackLayout
+                HorizontalOptions="FillAndExpand"
+                Spacing="20">
+            <Button
+                Clicked="btn_add"
+                MaximumWidthRequest="300"
+                HorizontalOptions="Fill"
+                Text="Adicionar Musica">
+            </Button>
+            <Button
+                Text="Ver Musicas Criadas"
+                MaximumWidthRequest="300">
+                
+            </Button>
+            <Button
+                Text="Criar Exercicio"
+                MaximumWidthRequest="300">
+            </Button>
+            <Button
+                Text="Sobre o App"
+                MaximumWidthRequest="300">
+            </Button>
+
+            </VerticalStackLayout>
+        
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
