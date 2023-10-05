@@ -14,30 +14,32 @@
             <Image
                 Source="getlang.png"
                 HeightRequest=" 300"
-                WidthRequest="300"></Image>
+                WidthRequest="300"/>
+
 
             <VerticalStackLayout
                 HorizontalOptions="FillAndExpand"
                 Spacing="20">
+
             <Button
                 Clicked="btn_add"
                 MaximumWidthRequest="300"
                 HorizontalOptions="Fill"
-                Text="Adicionar Musica">
-            </Button>
+                Text="Adicionar Musica"/>
+           
             <Button
                 Text="Ver Musicas Criadas"
-                MaximumWidthRequest="300">
+                MaximumWidthRequest="300"/>
                 
-            </Button>
+        
             <Button
                 Text="Criar Exercicio"
-                MaximumWidthRequest="300">
-            </Button>
+                MaximumWidthRequest="300"/>
+            
             <Button
                 Text="Sobre o App"
-                MaximumWidthRequest="300">
-            </Button>
+                MaximumWidthRequest="300"/>
+            
 
             </VerticalStackLayout>
         
