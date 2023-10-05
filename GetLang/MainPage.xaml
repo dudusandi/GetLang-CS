@@ -22,18 +22,18 @@
                 Spacing="20">
 
             <Button
-                Clicked="btn_add"
+                Clicked="Btn_add"
                 MaximumWidthRequest="300"
                 HorizontalOptions="Fill"
-                Text="Adicionar Musica"/>
-           
+                Text="Adicionar Musicas"/>
+
             <Button
                 Text="Ver Musicas Criadas"
                 MaximumWidthRequest="300"/>
                 
         
             <Button
-                Text="Criar Exercicio"
+                Text="Criar Exercicios"
                 MaximumWidthRequest="300"/>
             
             <Button

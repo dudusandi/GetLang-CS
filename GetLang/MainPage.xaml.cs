@@ -8,9 +8,9 @@
             InitializeComponent();
         }
 
-        async void btn_add(object sender, EventArgs e)
+        async void Btn_add(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new CriarMusica());
+            await Navigation.PushAsync(new CriarMusica());
         }
 
     }
