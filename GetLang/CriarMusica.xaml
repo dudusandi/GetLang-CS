@@ -18,15 +18,14 @@
 
 
         <VerticalStackLayout
+            Padding="20"
+            MaximumHeightRequest="600"
+            HorizontalOptions="Fill">
 
-                Padding="20"
-                MaximumHeightRequest="600"
-                HorizontalOptions="Fill">
-
-            <Button
-                Text="Salvar"
-                HorizontalOptions="Fill"
-                MaximumWidthRequest="600"/>
+        <Button
+            Text="Salvar"
+            HorizontalOptions="Fill"
+            MaximumWidthRequest="600"/>
         
 
         </VerticalStackLayout>
