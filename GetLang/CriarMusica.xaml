@@ -21,7 +21,7 @@
 
                 Padding="20"
                 MaximumHeightRequest="600"
-                HorizontalOptions="Fill"/>
+                HorizontalOptions="Fill">
 
             <Button
                 Text="Salvar"
