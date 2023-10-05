@@ -25,7 +25,7 @@
                 Clicked="Btn_add"
                 MaximumWidthRequest="300"
                 HorizontalOptions="Fill"
-                Text="Adicionar Musicas"/>
+                Text="Adicionar Musica"/>
 
             <Button
                 Text="Ver Musicas Criadas"
