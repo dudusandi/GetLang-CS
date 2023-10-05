@@ -2,31 +2,64 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GetLang.CriarMusica"
-             Title="CriarMusica">
+             Title=" "
+             BackgroundColor="#f4f4f4"
+             >
 
 
-    <StackLayout Padding="20">
+    <StackLayout
+        Padding="10">
+
 
         <Label
-            Margin="0,30,0,30"
-            Text="Digite um Trecho da Musica: "
-            FontSize="24"/>
-            
+            Text="Criar Musica"
+            FontAttributes="Bold"
+            TextColor="#a660cc"
+            HorizontalOptions="Center"
+            Padding="10"
+            FontSize="40"
+            />
 
         <Editor
-            HeightRequest="300"/>
+            HeightRequest="30"
+            Margin="0,10,0,0"
+            BackgroundColor="#ffffff"
+            x:Name="nomeMusica"
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Start"
+            FontSize="18"
+            Placeholder="Digite o nome da Musica"/>
+
+
+        <Editor
+            Margin="0,20,0,0"
+            FontSize="18"
+            BackgroundColor="#ffffff"
+            HeightRequest="300"
+            x:Name="letraMusica"
+            Placeholder="Digite a Musica"/>
 
 
         <VerticalStackLayout
-            Padding="20"
             MaximumHeightRequest="600"
-            HorizontalOptions="Fill">
+            HorizontalOptions="Fill"
+            Padding="20">
 
         <Button
             Text="Salvar"
+            Clicked="Button_Clicked"
             HorizontalOptions="Fill"
-            MaximumWidthRequest="600"/>
-        
+            CornerRadius="20"
+            MaximumWidthRequest="300"/>
+
+            <Button
+            Text="Limpar"
+            Clicked="Button_Clicked_1"
+            Margin="0,10,0,0"
+            HorizontalOptions="Fill"
+            CornerRadius="20"
+            MaximumWidthRequest="300"/>
+
 
         </VerticalStackLayout>
 
