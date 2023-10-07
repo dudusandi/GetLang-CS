@@ -1,54 +1,58 @@
-using Microsoft.Data.Sqlite;
-using Microsoft.Maui.Animations;
 using CommunityToolkit.Maui.Alerts;
 using CommunityToolkit.Maui.Core;
+using SQLite;
+using System.Diagnostics;
 
-namespace GetLang;
-
-public partial class CriarMusica : ContentPage
+namespace GetLang
 {
-    CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-    public CriarMusica()
-	{
-		InitializeComponent();
-	}
-
-
-private void Button_Clicked(object sender, EventArgs e)
-{
-    using (var connection = new SqliteConnection("Data Source=hello.db"))
+    public partial class CriarMusica : ContentPage
     {
 
+        Banco database;
+        public CriarMusica()
+        {
+            InitializeComponent();
+            database = new Banco();
+        }
 
-            string nome = nomeMusica.Text;
-            string letra = letraMusica.Text;
+        async void Button_Clicked(object sender, EventArgs e)
+        {
+
+            try
+            {
+                await database.Database.CreateTableAsync<Musica>();
+
+                string nome = nomeMusica.Text;
+                string letra = letraMusica.Text;
+
+                var musica = new Musica
+                {
+                    nomeMusica = nome,
+                    letraMusica = letra
+                };
 
 
-        connection.Open();
+                await database.Database.InsertAsync(musica);
 
-        var command = connection.CreateCommand();
-        command.CommandText = "INSERT INTO listaMusica (nome, letra) VALUES (@nome, @letra)";
+                string text = "Música Adicionada!";
+                ToastDuration duration = ToastDuration.Short;
+                double fontSize = 14;
+                var toast = Toast.Make(text, duration, fontSize);
+                await toast.Show();
 
-        command.Parameters.AddWithValue("@nome", nome);
-        command.Parameters.AddWithValue("@letra", letra);
+                nomeMusica.Text = string.Empty;
+                letraMusica.Text = string.Empty;
+            }
+            catch (SQLiteException ex)
+            {
+                Debug.WriteLine($"SQLite Error: {ex.Message}");
+            }
+        }
 
-        command.ExecuteNonQuery();
-        connection.Close();
-            string text = "Musica Adicionada!";
-            ToastDuration duration = ToastDuration.Short;
-            double fontSize = 14;
-
-            var toast = Toast.Make(text, duration, fontSize);
-            toast.Show(cancellationTokenSource.Token);
-
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
             nomeMusica.Text = string.Empty;
             letraMusica.Text = string.Empty;
-    }
-}
-
-    private void Button_Clicked_1(object sender, EventArgs e)
-    {
-        nomeMusica.Text = string.Empty; 
-        letraMusica.Text = string.Empty;
+        }
     }
 }
